@@ -5,9 +5,13 @@ We will use merge these files using [Aspose.Email Cloud API](https://products.as
 
 # Guidelines for Usage
 **Sign up with Aspose Cloud:** First, create an account with [aspose.cloud](https://dashboard.aspose.cloud/#/) and get your Client Id and Client Secret to call Aspose REST APIs
+
 **Get JSON Web Token Authentication:** Aspose APIs use [JSON Web Token for authentication](https://docs.aspose.cloud/total/json-web-token-authentication/) of API calls. You need to send a POST request to /connect/token endpoint by authenticating the request using Client Credentials (Client Id and Client Secret).
+
 **Convert Email to PDF:** Aspose.Email Cloud API does not support direct conversion of Email to PDF. So we will first convert Email to MTHML using Aspose.Email Cloud API and later will convert MHTML to PDF using Aspose.Words Cloud API.
+
 **Convert Excel to PDF:** We will convert the Excel file to PDF using Aspose.Cells Cloud API.
+
 **Merge multiple PDF documents:** Finally, we will merge multiple PDF documents into a single PDF document using Aspose.PDF Cloud API.
 
 # Interested in Aspose free consulting project?
