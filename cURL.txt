@@ -1,0 +1,37 @@
+// First get JWT Access Token
+// Get client Secret and client Id from https://dashboard.aspose.cloud/
+curl -X POST "https://api.aspose.cloud/connect/token" 
+-d "grant_type=client_credentials&client_id=xxxx-xxxx-xxxx-xxxx-xxxxxxxxx&client_secret=xxxxxxxxxxxxxxxxxxxxxxxxxxx" 
+-H "Content-Type: application/x-www-form-urlencoded" 
+-H "Accept: application/json"
+
+//Convert Mail to MHTML using Aspose.Email Cloud API
+curl -X PUT "https://api.aspose.cloud/v3.0/email/convert/Mhtml" 
+-H "accept: multipart/form-data" 
+-H "authorization: Bearer [Access_Token]" 
+-H "Content-Type: multipart/form-data" 
+-H "x-aspose-client: Containerize.Swagger" 
+-F "File=@C:/Temp/appointment-draft.msg" 
+--output C:/Temp/appointment-draft.mhtml
+
+//Convert MHTML to PDF using Aspose.Words Cloud API and save to cloud storage
+curl -X PUT "https://api.aspose.cloud/v4.0/words/convert?format=pdf&outPath=Temp/appointment-draft.pdf&fileNameFieldValue=sourceFilename" 
+-H "accept: application/octet-stream" 
+-H "Authorization: Bearer [Access_Token]" 
+-H "Content-Type: multipart/form-data" 
+-H "x-aspose-client: Containerize.Swagger" 
+-F "File=@C:/Temp/appointment-draft.mhtml"
+
+//Convert Excel to PDF using Aspose.Cells Cloud API from cloud storage
+curl -X GET "https://api.aspose.cloud/v3.0/cells/Test.xlsx?format=pdf&isAutoFit=false&onlySaveTable=false&folder=Temp&outPath=Temp/Test_excel.pdf" 
+-H "accept: multipart/form-data" 
+-H "authorization: Bearer [Access_Token]" 
+-H "x-aspose-client: Containerize.Swagger"
+
+//Merge PDF documents together into a single PDF using Aspose.PDF Cloud API from cloud storage
+curl -X PUT "https://api.aspose.cloud/v3.0/pdf/Merge_output.pdf/merge?folder=Temp" 
+-H "accept: application/json" 
+-H "authorization: Bearer [Access_TOken]" 
+-H "Content-Type: application/json" 
+-H "x-aspose-client: Containerize.Swagger" 
+-d "{ "List": [ "Temp/Test.pdf","Temp/appointment-draft.pdf","Temp/Test_excel.pdf" ]}"
