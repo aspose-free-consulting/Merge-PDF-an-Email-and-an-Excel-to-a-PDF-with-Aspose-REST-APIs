@@ -22,4 +22,4 @@ If you have any questions about Aspose APIs, please feel free to [post your quer
 Also, you can keep in touch with the latest developments in [file format APIs offered by Aspose at our Blog](https://blog.aspose.com/).
 
 # This free consulting project is based on the following issue:
-[I want to render a PDF using another PDF, an email and an excel](https://github.com/aspose-free-consulting/projects/issues/55)
+I want to render a PDF using another PDF, an email and an excel: github.com/aspose-free-consulting/projects/issues/55
